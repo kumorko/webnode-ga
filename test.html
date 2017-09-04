@@ -1,0 +1,83 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script
+  src="https://code.jquery.com/jquery-1.11.1.min.js"
+  integrity="sha256-VAvG3sHdS5LqTT+5A/aeq/bZGa/Uj04xKxY8KM/w9EE="
+  crossorigin="anonymous"></script>
+  <script src="./ga-order-submit.js"></script>
+</head>
+<body>
+  <form id="cartForm" method="post" action="/es-cart/">
+     <input type="submit" name="recalculateButton" value="recalculateButton" class="firstSubmit">
+     <table class="modernTable withHeader cartTable">
+        <thead>
+           <tr>
+              <td class="headTitle">Produkt</td>
+              <td class="headInput">Množstvo</td>
+              <td class="headPrice">Cena za kus</td>
+              <td class="headPrice">Cena celkom</td>
+              <td class="headRemove">&nbsp;</td>
+           </tr>
+        </thead>
+        <tbody>
+           <tr>
+              <td><a href="/products/postel-jacek-p-borovica-190x80/">Posteľ Jacek P borovica 190x80</a></td>
+              <td class="input">                                                    <input type="text" name="product[200037606]" id="product_200037606" value="2">                                                </td>
+              <td class="price">183,00 €</td>
+              <td class="price">366,00 €</td>
+              <td>                                                    <input title="Odobrať" type="submit" class="remove" name="remove[200037606]" value="">                                                </td>
+           </tr>
+           <tr>
+              <td><a href="/products/detska-postielka-s-matracom-borovica-dekor/">Detská postieľka Klasik Borovica dekor</a></td>
+              <td class="input">                                                    <input type="text" name="product[200015929]" id="product_200015929" value="1">                                                </td>
+              <td class="price">35,00 €</td>
+              <td class="price">35,00 €</td>
+              <td>                                                    <input title="Odobrať" type="submit" class="remove" name="remove[200015929]" value="">                                                </td>
+           </tr>
+        </tbody>
+     </table>
+     <table class="modernTable withHeader totalTable">
+        <thead>
+           <tr>
+              <td class="title">Celková cena s DPH</td>
+              <td class="value">401,00 €</td>
+           </tr>
+        </thead>
+        <tbody>
+           <tr>
+              <td class="title">Celková cena bez DPH</td>
+              <td class="value">340,00 €</td>
+           </tr>
+        </tbody>
+     </table>
+     <div class="control">
+        <div class="button" id="checkoutButton" onmouseout="this.className='button';" onmouseover="this.className='button hoverButton';">
+           <div class="rightTop">
+              <div class="leftBottom">
+                 <div class="rightBottom">                                            <input type="submit" name="checkoutButton" value="Zaplatiť >" class="submit">                                        </div>
+              </div>
+           </div>
+        </div>
+        <div class="button" id="recalculateButton" onmouseout="this.className='button';" onmouseover="this.className='button hoverButton';">
+           <div class="rightTop">
+              <div class="leftBottom">
+                 <div class="rightBottom">                                            <input type="submit" name="recalculateButton" value="Prepočítať" class="submit">                                        </div>
+              </div>
+           </div>
+        </div>
+        <div class="button" id="backButton" onmouseout="this.className='button';" onmouseover="this.className='button hoverButton';">
+           <div class="rightTop">
+              <div class="leftBottom">
+                 <div class="rightBottom">                                            <input type="submit" name="backButton" value="< Pokračovať v nákupe" class="submit">                                        </div>
+              </div>
+           </div>
+        </div>
+        <div class="cleaner">
+           <!-- / -->
+        </div>
+     </div>
+  </form>
+</body>
+</html>
