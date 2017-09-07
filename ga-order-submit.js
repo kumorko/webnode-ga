@@ -24,6 +24,8 @@ jQuery(function gaOrder() {
 
   // eslint-disable-next-line no-undef
   var order = RS_CFG.finishedOrderData;
-  logTransaction(order.orderNumber, order.amount);
-  logItems(order.orderNumber, order.products);
+  if (typeof order !== 'undefined') {
+    logTransaction(order.orderNumber, order.amount);
+    logItems(order.orderNumber, order.products);
+  }
 });
