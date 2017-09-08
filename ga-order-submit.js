@@ -1,18 +1,17 @@
 jQuery(function gaOrder() {
-  // logging section
-  var log = window.ga || console.log;
+  var ga = window.ga || console.log;
 
-  function logTransaction(id, revenue) {
-    log('ecommerce:addTransaction', {
+  function addTransaction(id, revenue) {
+    ga('ecommerce:addTransaction', {
       id: id,
       revenue: revenue
     });
   }
 
-  function logItems(id, products) {
-    Object.keys(products).forEach(function logItem(key) {
+  function addItems(id, products) {
+    Object.keys(products).forEach(function addItem(key) {
       var product = products[key];
-      log('ecommerce:addItem', {
+      ga('ecommerce:addItem', {
         id: id,
         name: product.name,
         sku: product.id,
@@ -25,7 +24,9 @@ jQuery(function gaOrder() {
   // eslint-disable-next-line no-undef
   var order = RS_CFG.finishedOrderData;
   if (typeof order !== 'undefined') {
-    logTransaction(order.orderNumber, order.amount);
-    logItems(order.orderNumber, order.products);
+    ga('require', 'ecommerce');
+    addTransaction(order.orderNumber, order.amount);
+    addItems(order.orderNumber, order.products);
+    ga('ecommerce:send');
   }
 });
